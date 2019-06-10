@@ -16,7 +16,7 @@
     <% @starships.each do |edge| %>
       <% starship= edge['node'] %>
       <tr>
-        <td><%= starship['name'] %></td>
+        <td><%= link_to starship['name'], starship_path(starship['id']) %></td>
         <td><%= starship['model'] %></td>
         <%# <td><%= starship['cargoCapacity'] %>
         <%# <td><%= starship['costInCredits'] %>

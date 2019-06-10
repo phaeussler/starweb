@@ -89,7 +89,7 @@ class StarshipsController < ApplicationController
       }
       
       fragment starshipFragment on Starship {
-        # id
+        id
         name
         model
       #   starshipClass
@@ -119,9 +119,10 @@ class StarshipsController < ApplicationController
 
     def get_one(id)
       puts "get one starship id #{id}"
+      id = '"'+id+'"'
       query = 
         "{
-          starship(starshipID: #{id}) {
+          starship(id: #{id}) {
             ...starshipFragment
           } 
         }
@@ -146,9 +147,11 @@ class StarshipsController < ApplicationController
           filmConnection { edges { node { ...filmFragment }}}
         }
         fragment pilotFragment on Person {
+          id
           name
         }
         fragment filmFragment on Film{
+          id
           title
         }"
       code, body = execute_request(query)

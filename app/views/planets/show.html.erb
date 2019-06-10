@@ -44,17 +44,15 @@
 
 <p>
   <strong>Residents:</strong>
-  <% @planet['residentConnection']['edges'].each do |film| %>
-    <%= film['node']['name'] + ' - ' %>
-    <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %>
+  <% @planet['residentConnection']['edges'].each do |person| %>
+    <%= link_to person['node']['name'], person_path(person['node']['id']) %>-
   <% end %>
 </p>
 
 <p>
   <strong>Films:</strong>
   <% @planet['filmConnection']['edges'].each do |film| %>
-    <%= film['node']['title'] + ' - ' %>
-    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films'))</p> %> 
+    <%= link_to film['node']['title'], film_path(film['node']['id']) %>-
   <% end %>
 </p>
 

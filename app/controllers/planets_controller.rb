@@ -88,7 +88,7 @@ class PlanetsController < ApplicationController
     }
     
     fragment planetFragment on Planet {
-      # id
+      id
       name
       # diameter
       # rotationPeriod
@@ -111,9 +111,10 @@ class PlanetsController < ApplicationController
 
   def get_one(id)
     puts "get one person id #{id}"
+    id = '"'+id+'"'
     query = 
       "{
-        planet(planetID: #{id}) {
+        planet(id: #{id}) {
           ...planetFragment
         }
       }
@@ -133,10 +134,12 @@ class PlanetsController < ApplicationController
         residentConnection {edges {node { ...residentFragment}}}
       }
       fragment filmFragment on Film {
+        id
         title
       }
       
       fragment residentFragment on Person {
+        id
         name
       }            
       "

@@ -81,6 +81,7 @@ class FilmsController < ApplicationController
       "{allFilms {
         edges {
           node {
+            id
             episodeID
             title
             director
@@ -100,9 +101,10 @@ class FilmsController < ApplicationController
 
     def get_one(id)
       puts "get one film id #{id}"
+      id = '"'+id+'"'
       query = 
         "{
-          film(filmID: 2) {
+          film(id: #{id}) {
             ...filmFragment
           }
         }
@@ -120,14 +122,17 @@ class FilmsController < ApplicationController
         }
         
         fragment planetFragment on Planet {
+          id
           name
         }
         
         fragment starshipFragment on Starship {
+          id
           name
         }
         
         fragment characterFragment on Person {
+          id
           name
         }"
       code, body = execute_request(query)

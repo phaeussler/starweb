@@ -19,7 +19,7 @@
       <% film= edge['node'] %>
       <tr>
         <td><%= film['episodeID'] %></td>
-        <td><%= film['title'] %></td>
+        <td><%= link_to film['title'], film_path(film['id']) %> </td>
         <td><%= film['releaseDate'] %></td>
         <td><%= film['director'] %></td>
         <td><%= film['producers'] %></td>

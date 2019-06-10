@@ -15,14 +15,9 @@
     <% @planets.each do |edge| %>
       <% planet= edge['node'] %>
       <tr>
-        <td><%= planet['name'] %></td>
+        <td><%= link_to planet['name'], planet_path(planet['id']) %></td>
       </tr>
     <% end %>
-    <%# <% @planets.each do |planet| %> 
-      <%# <tr> %>
-        <%# <td><%= link_to planet['name'], planet_path(get_id(planet['url'], 'planets'))</td> %> 
-      <%# </tr> %>
-    <%# <% end %> 
   </tbody>
 </table>
 

@@ -57,15 +57,15 @@
   <%= @starship['MGLT'] %>
 </p>
 
-<p>
-  <strong>Starship class:</strong>
-  <%# <%= @starship['starship_class'] %> %>
-</p>
+<%# <p> %>
+  <%# <strong>Starship class:</strong> %>
+  <%# <%= @starship['starship_class'] %> 
+<%# </p> %>
 
 <p>
   <strong>Pilots:</strong>
   <% @starship['pilotConnection']['edges'].each do |person| %>
-    <%= person['node']['name'] + ' - ' %>
+    <%= link_to person['node']['name'], person_path(person['node']['id'])%> -
     <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %>
   <% end %>
 </p>
@@ -73,8 +73,7 @@
 <p>
   <strong>Films:</strong>
   <% @starship['filmConnection']['edges'].each do |film| %>
-    <%= film['node']['title'] + ' - ' %>
-    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films'))</p> %> 
+    <%= link_to film['node']['title'], film_path(film['node']['id'])%> -
   <% end %>
 </p>
 

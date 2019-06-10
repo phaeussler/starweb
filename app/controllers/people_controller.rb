@@ -88,6 +88,7 @@ class PeopleController < ApplicationController
       }
       
       fragment personFragment on Person {
+        id
         name
         # birthYear
         # eyeColor
@@ -100,7 +101,6 @@ class PeopleController < ApplicationController
         #   id
         # }
         # species {
-        #   id
         # }
       }
       "
@@ -114,9 +114,10 @@ class PeopleController < ApplicationController
 
     def get_one(id)
       puts "get one person id #{id}"
+      id = '"'+id+'"'
       query = 
         "{
-          person(personID: #{id}) {
+          person(id: #{id}) {
             ...personFragment
           }
         }
@@ -133,18 +134,22 @@ class PeopleController < ApplicationController
           filmConnection { edges { node { ...filmFragment }}}
           starshipConnection { edges { node { ...starshipFragment }}}
           homeworld {
+            id
             name
           }
           species {
+            id
             name
           }
         }
         
         fragment filmFragment on Film {
+          id
           title
         }
         
         fragment starshipFragment on Starship {
+          id
           name
         }
         "

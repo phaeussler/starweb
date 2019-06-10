@@ -14,16 +14,9 @@
     <% @people.each do |edge| %>
       <% person= edge['node'] %>
       <tr>
-        <td><%= person['name'] %></td>
+        <td><%= link_to person['name'], person_path(person['id']) %></td>
       </tr>
     <% end %>
-
-
-    <%# <% @people.each do |person| %> %>
-      <%# <tr> %>
-        <%# <td><%= link_to person['name'], person_path(get_id(person['url'], 'people')) %></td> %>
-      <%# </tr> %>
-    <%# <% end %> %>
   </tbody>
 </table>
 
