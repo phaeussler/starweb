@@ -129,6 +129,15 @@ class PlanetsController < ApplicationController
         climates
         terrains
         surfaceWater
+        filmConnection { edges { node { ...filmFragment }}}
+        residentConnection {edges {node { ...residentFragment}}}
+      }
+      fragment filmFragment on Film {
+        title
+      }
+      
+      fragment residentFragment on Person {
+        name
       }            
       "
     code, body = execute_request(query)

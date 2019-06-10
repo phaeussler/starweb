@@ -130,12 +130,22 @@ class PeopleController < ApplicationController
           height
           mass
           skinColor
+          filmConnection { edges { node { ...filmFragment }}}
+          starshipConnection { edges { node { ...starshipFragment }}}
           homeworld {
-            id
+            name
           }
           species {
-            id
+            name
           }
+        }
+        
+        fragment filmFragment on Film {
+          title
+        }
+        
+        fragment starshipFragment on Starship {
+          name
         }
         "
       code, body = execute_request(query)

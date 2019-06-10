@@ -64,16 +64,18 @@
 
 <p>
   <strong>Pilots:</strong>
-  <%# <% @starship['pilots'].each do |person| %> %>
-    <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %></p> %>
-  <%# <% end %> %>
+  <% @starship['pilotConnection']['edges'].each do |person| %>
+    <%= person['node']['name'] + ' - ' %>
+    <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %>
+  <% end %>
 </p>
 
 <p>
   <strong>Films:</strong>
-  <%# <% @starship['films'].each do |film| %> %>
-    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p> %>
-  <%# <% end %> %>
+  <% @starship['filmConnection']['edges'].each do |film| %>
+    <%= film['node']['title'] + ' - ' %>
+    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films'))</p> %> 
+  <% end %>
 </p>
 
 

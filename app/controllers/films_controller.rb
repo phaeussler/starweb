@@ -102,28 +102,33 @@ class FilmsController < ApplicationController
       puts "get one film id #{id}"
       query = 
         "{
-          film(filmID: #{id}) {
-            title
-            episodeID
-            openingCrawl
-            director
-            producers
-            releaseDate
-            starshipConnection {
-              edges {
-                node {
-                  id
-                }
-              }
-            }
-            characterConnection {
-              edges {
-                node {
-                  id
-                }
-              }
-            }
+          film(filmID: 2) {
+            ...filmFragment
           }
+        }
+        
+        fragment filmFragment on Film {
+          title
+          episodeID
+          openingCrawl
+          director
+          producers
+          releaseDate
+          planetConnection { edges { node { ...planetFragment }}}
+          starshipConnection { edges { node { ...starshipFragment }}}
+          characterConnection { edges { node { ...characterFragment }}}
+        }
+        
+        fragment planetFragment on Planet {
+          name
+        }
+        
+        fragment starshipFragment on Starship {
+          name
+        }
+        
+        fragment characterFragment on Person {
+          name
         }"
       code, body = execute_request(query)
       puts "body[:data] #{body['data']['film']}, #{body.class.name}"

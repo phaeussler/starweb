@@ -1,14 +1,4 @@
 <p id="notice"><%= notice %></p>
-name
-diameter
-rotationPeriod
-orbitalPeriod
-gravity
-population
-climates
-terrains
-surfaceWater
-
 
 <h1><%= @planet['name'] %></h1>
 
@@ -54,16 +44,18 @@ surfaceWater
 
 <p>
   <strong>Residents:</strong>
-  <%# <% @planet['residents'].each do |person| %> %>
-    <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %></p> %>
-  <%# <% end %> %>
+  <% @planet['residentConnection']['edges'].each do |film| %>
+    <%= film['node']['name'] + ' - ' %>
+    <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %>
+  <% end %>
 </p>
 
 <p>
   <strong>Films:</strong>
-  <%# <% @planet['films'].each do |film| %> %>
-    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p> %>
-  <%# <% end %> %>
+  <% @planet['filmConnection']['edges'].each do |film| %>
+    <%= film['node']['title'] + ' - ' %>
+    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films'))</p> %> 
+  <% end %>
 </p>
 
 
