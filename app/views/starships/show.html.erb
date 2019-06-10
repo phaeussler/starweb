@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @starship['name'] %></h1>
+
+<p>
+  <strong>Model:</strong>
+  <%= @starship['model'] %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @starship['manufacturer'] %>
+</p>
+
+<p>
+  <strong>Cost in credits:</strong>
+  <%= @starship['costInCredits'] %>
+</p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @starship['length'] %>
+</p>
+
+<p>
+  <strong>Max atmosphering speed:</strong>
+  <%= @starship['maxAtmospheringSpeed'] %>
+</p>
+
+<p>
+  <strong>Crew:</strong>
+  <%= @starship['crew'] %>
+</p>
+
+<p>
+  <strong>Passengers:</strong>
+  <%= @starship['passengers'] %>
+</p>
+
+<p>
+  <strong>Cargo capacity:</strong>
+  <%= @starship['cargoCapacity'] %>
+</p>
+
+<p>
+  <strong>Consumables:</strong>
+  <%= @starship['consumables'] %>
+</p>
+
+<p>
+  <strong>Hyperdrive_rating:</strong>
+  <%= @starship['hyperdriveRating'] %>
+</p>
+
+<p>
+  <strong>MGLT:</strong>
+  <%= @starship['MGLT'] %>
+</p>
+
+<p>
+  <strong>Starship class:</strong>
+  <%# <%= @starship['starship_class'] %> %>
+</p>
+
+<p>
+  <strong>Pilots:</strong>
+  <%# <% @starship['pilots'].each do |person| %> %>
+    <%# <p><%= link_to get_name(person, 'name'), person_path(get_id(person,'people')) %></p> %>
+  <%# <% end %> %>
+</p>
+
+<p>
+  <strong>Films:</strong>
+  <%# <% @starship['films'].each do |film| %> %>
+    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p> %>
+  <%# <% end %> %>
+</p>
+
+
+<%= link_to 'Back', starships_path %>

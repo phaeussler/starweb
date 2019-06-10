@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Starweb</title>
+    <%# <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" /> %>
+    <%# <link rel="shortcut icon" type="image/png" href="img/sw.png"> %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <ul>
+      <li><a class="text_button" style="color:white" <%=link_to 'Films', films_path%></a></li>
+      <li><a class="text_button" style="color:white" <%=link_to 'People', people_path%></a></li>
+      <li><a class="text_button" style="color:white" <%=link_to 'Planets', planets_path%></a></li>
+      <li><a class="text_button" style="color:white" <%=link_to 'Starships', starships_path%></a></li>
+      <li><a>
+        <%= form_tag search_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag 'Search' %>
+        <% end %>
+      </a></li>
+    </ul>
+    <%= yield %>
+  </body>
+</html>
+
+

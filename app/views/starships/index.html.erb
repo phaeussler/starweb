@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Starships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Model</th>
+      <th>Cargo Capacity</th>
+      <th>Cost In Credits</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @starships.each do |edge| %>
+      <% starship= edge['node'] %>
+      <tr>
+        <td><%= starship['name'] %></td>
+        <td><%= starship['model'] %></td>
+        <td><%= starship['cargoCapacity'] %></td>
+        <td><%= starship['costInCredits'] %></td>
+      </tr>
+    <% end %>
+
+
+
+
+
+
+    <%# <% @starships.each do |starship| %>
+      <%# <tr> %>
+        <%# <td><%= link_to starship['name'], starship_path(get_id(starship['url'], 'starships')) %>
+      <%# </tr> %>
+    <%# <% end %> 
+  </tbody>
+</table>
+
+<br>

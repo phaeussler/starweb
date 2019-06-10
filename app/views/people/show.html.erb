@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @person['name'] %></h1>
+
+<p>
+  <strong>Heigh:</strong>
+  <%= @person['height'] %>
+</p>
+
+
+<p>
+  <strong>Mass:</strong>
+  <%= @person['mass'] %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @person['hairColor'] %>
+</p>
+
+<p>
+  <strong>Skin color:</strong>
+  <%= @person['skinColor'] %>
+</p>
+
+<p>
+  <strong>Eye color:</strong>
+  <%= @person['eyeColor'] %>
+</p>
+
+<p>
+  <strong>Birth year:</strong>
+  <%= @person['birthYear'] %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @person['gender'] %>
+</p>
+
+<p>
+  <strong>Homeworld:</strong>
+    <%# <p><%= link_to get_name(@person['homeworld'], 'name'), planet_path(get_id(@person['homeworld'], 'planets')) %></p> %>
+</p>
+
+<p>
+  <strong>Films:</strong>
+  <%# <% @person['films'].each do |film| %> %>
+    <%# <p><%= link_to get_name(film, 'title'), film_path(get_id(film,'films')) %></p> %>
+  <%# <% end %> %>
+</p>
+
+<p>
+  <strong>Starships:</strong>
+  <%# <% @person['starships'].each do |starship| %> %>
+    <%# <p><%= link_to get_name(starship, 'name'), starship_path(get_id(starship,'starships')) %></p> %>
+  <%# <% end %> %>
+</p>
+
+
+<%= link_to 'Back', people_path %>

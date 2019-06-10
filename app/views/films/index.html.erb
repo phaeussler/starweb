@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Films</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Episode</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Director</th>
+      <th>Producers</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @films.each do |edge| %>
+      <% film= edge['node'] %>
+      <tr>
+        <td><%= film['episodeID'] %></td>
+        <td><%= film['title'] %></td>
+        <td><%= film['releaseDate'] %></td>
+        <td><%= film['director'] %></td>
+        <td><%= film['producers'] %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planets</h1>
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <%# <th colspan="3"></th> %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planets.each do |edge| %>
+      <% planet= edge['node'] %>
+      <tr>
+        <td><%= planet['name'] %></td>
+      </tr>
+    <% end %>
+    <%# <% @planets.each do |planet| %> %>
+      <%# <tr> %>
+        <%# <td><%= link_to planet['name'], planet_path(get_id(planet['url'], 'planets'))</td> %> %>
+      <%# </tr> %>
+    <%# <% end %> %>
+  </tbody>
+</table>
+
+<br>
