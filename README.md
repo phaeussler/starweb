@@ -4,5 +4,3 @@ Web page that show information of all movies of starwars, you will find informat
 * People
 * Starships
 * Planets
-
-To visit the webpage [click here](https://starweb.herokuapp.com)
